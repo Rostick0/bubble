@@ -6,6 +6,24 @@ fonts
 
 helpers
 
+header
+
+main
+
+choose
+
+price
+
+rule
+
+baying
+
+activity
+
+statistic
+
+footer
+
 */
 
 
@@ -398,7 +416,9 @@ ol > li:before {
     background-size: 100% 100%;
 
     margin-top: -20rem;
+    margin-bottom: -21rem;
     padding-top: 6.75rem;
+    padding-bottom: 2rem;
 }
 
 .rule__name {
@@ -411,6 +431,10 @@ ol > li:before {
 
     padding-left: 6vw;
     padding-right: 6.5vw;
+}
+
+.rule__items_mobile {
+    display: none;
 }
 
 .rule__item {
@@ -500,6 +524,8 @@ ol > li:before {
 .rule__item:nth-child(5) .rule__item_inner {
     display: flex;
     align-items: end;
+
+    margin-right: 7rem;
 }
 
 .rule__item:nth-child(5) svg {
@@ -551,7 +577,14 @@ ol > li:before {
 /* baying */
 
 .baying {
+    background: url('../img/baying_background.png') no-repeat;
+    background-size: 100% 100%;
+
+
+    padding-top: 13.75rem;
+    padding-bottom: 10rem;
     margin-top: 7.125rem;
+    margin-bottom: -11rem;
 }
 
 .baying__card {
@@ -565,11 +598,9 @@ ol > li:before {
     justify-content: space-between;
 
     padding: 1.93rem 2.19rem 3.5rem;
-    margin-left: 20.93rem;
-    margin-right: 20.93rem;
-    margin-bottom: 1.875rem;
+    margin: 3rem auto 6.25rem;
 
-    width: 48.125rem;
+    max-width: 50rem;
 }
 
 .baying__card_left {
@@ -726,6 +757,7 @@ ol > li:before {
 }
 
 .baying__select_button {
+    background: #ffffff;
     box-shadow: -0.25rem 0.5rem 0 #000000;
 }
 
@@ -754,11 +786,66 @@ ol > li:before {
     text-transform: uppercase;
 }
 
+.baying__bubbles {
+    background: #FFFFFF;
+    border: 1.5px solid #000000;
+    border-radius: 2.5rem;
+    box-shadow: 0 0.375rem 0 #000000;
+
+    padding: 1rem;
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
+}
+
+.baying__bubble {
+    background: url('../img/price-num_background.png') no-repeat;
+    background-size: 100% 100%;
+
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    font-size: var(--FontSize);
+
+    width: var(--Size);
+    height: var(--Size);
+}
+
+.baying__bubble_name {
+    font-weight: bold;
+}
+
+.baying__bubble_coin {
+    display: flex;
+    justify-content: space-between;
+}
+
+.baying__bubble_coin span {
+    margin-right: 5%;
+}
+
+.baying__bubble_coin > *{
+    display: flex;
+    align-items: center;
+}
+
+.baying__bubble_coin-svg,
+.baying__bubble_money-img img {
+    width: var(--FontSize);
+}
+
+.baying__bubble_money {
+    display: flex;
+    align-items: center;
+}
+
 
 
 /* activity */
 
 .activity {
+    margin-top: 8.75rem;
     margin-bottom: 6.25rem;
 }
 
@@ -1030,6 +1117,27 @@ ol > li:before {
 
     /* rule */
 
+    .rule__items {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .rule__item:nth-child(5) {
+        margin-left: -60vw;
+    }
+
+    .rule__arrow:nth-child(1n) svg {
+        width: 70%;
+
+        margin: 0;
+    }
+
+    .rule__item:nth-child(4) svg {
+        height: 50%;
+
+        margin-top: 0.5rem;
+    }
+
     .rule__text {
         font-size: 1.56rem;
     }
@@ -1050,6 +1158,79 @@ ol > li:before {
     .statistic__counter {
         margin-top: 1.125rem;
         margin-bottom: 1.125rem;
+    }
+
+    /* baying */
+
+    .baying__card {
+        max-width: 44rem;
+    }
+
+    .baying__card_img {
+        margin-right: 1.375rem;
+
+        width: 6rem;
+    }
+
+    .baying__card_id {
+        font-size: 1.375rem;
+
+        margin-bottom: 0.75rem;
+    }
+
+    .baying__card_hash {
+        font-size: 1rem;
+
+        margin-bottom: 0.75rem;
+    }
+
+    .baying__card_date {
+        font-size: 0.81rem;
+    }
+
+    .baying__card_id_bottom {
+        font-size: 0.81rem;
+
+        padding: 0.25rem 0.5rem;
+    }
+
+    .baying__card_lines {
+        font-size: 1.125rem;
+    }
+
+    .baying__interaction {
+        margin-left: 7vw;
+        margin-right: 7vw;
+    }
+
+    .baying__button {
+        font-size: 1.5rem;
+
+        max-width: 16.875rem;
+        height: 3.5rem;
+    }
+
+    .baying__balance {
+        font-size: 1.25rem;
+    }
+
+    .baying__balance span {
+        margin-right: 0.625rem;
+    }
+
+    .baying__balance svg {
+        width: 2.5rem;
+    }
+
+    .baying__bubble {
+        font-size: calc(var(--FontSize) * 0.75);
+
+        width: calc(var(--Size) * 0.7);
+        height: calc(var(--Size) * 0.7);
+    }
+
+    .baying__bubble_coin-svg, .baying__bubble_money-img img {
+        width: calc(var(--FontSize) * 0.7);
     }
 
     /* activity */
@@ -1187,6 +1368,185 @@ ol > li:before {
     }
 
 
+    /* rule */
+
+    .rule {
+        padding-top: 14.75rem;
+    }
+
+    .rule__items {
+        display: none;
+    }
+
+    .rule__items_mobile {
+        display: block;
+
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    .rule__arrow:nth-child(1n) svg {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .rule__item:nth-child(1n) .rule__item_inner {
+        flex-direction: column;
+        align-items: end;
+
+        margin: 0;
+    }
+
+    .rule__item:nth-child(1) .rule__text {
+        margin: 0;
+    }
+
+    .rule__item:nth-child(odd) .rule__item_inner {
+        align-items: start;
+    }
+
+    .rule__item:nth-child(1) .rule__item_inner {
+        margin: 0;
+    }
+
+    .rule__item:nth-child(1) .rule__text {
+        max-width: 91vw;
+    }
+
+    .rule__item:nth-child(2) {
+        margin-top: -4rem;
+        margin-right: 0.75rem;
+    }
+
+    .rule__item:nth-child(2) .rule__text {
+        max-width: 94vw;
+    }
+
+    .rule__item:nth-child(3) {
+        margin-top: -4.25rem;
+    }
+    
+    .rule__item:nth-child(3) .rule__text {
+        max-width: 71vw;
+    }
+
+    .rule__item:nth-child(4) {
+        margin-top: -4rem;
+    }
+
+    .rule__item:nth-child(4) .rule__item_inner {
+        align-items: start;
+    }
+
+    .rule__item:nth-child(4) .rule__text {
+        max-width: 81vw;
+    }
+
+    .rule__item:nth-child(5) {
+        margin-top: -4rem;
+        margin-left: 0;
+    }
+
+    .rule__item:nth-child(5) .rule__item_inner {
+        align-items: end;
+    }
+
+    .rule__item:nth-child(5) .rule__text {
+        max-width: 80vw;
+    }
+
+    .rule__item:nth-child(6) {
+        margin: 0;
+        margin-top: -4rem;
+        margin-right: 6rem;
+    }
+
+    .rule__item:nth-child(6) .rule__item_inner {
+        align-items: start;
+    }
+
+    .rule__item:nth-child(6) .rule__text {
+        max-width: 83vw;
+    }
+
+    .rule__item:nth-child(6) .rule__arrow {
+        margin-left: 2rem;
+    }
+
+    .rule__item:nth-child(7) {
+        margin: 0;
+        margin-top: -4rem;
+        margin-left: 1rem;
+    }
+
+    /* .rule__item:nth-child(7)::before {
+        margin-left: 6rem;
+    } */
+
+    .rule__item:nth-child(7) .rule__text {
+        max-width: 71vw;
+    }
+
+    .rule__item:nth-child(7) .rule__item_inner {
+        align-self: center;
+    }
+
+
+    /* baying */
+
+    .baying__card {
+        flex-direction: column;
+        align-items: stretch;
+
+        padding: 2rem 1.25rem 1.625rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    .baying__card_left {
+        margin-right: 0;
+        margin-bottom: 0.625rem;
+    }
+
+    .baying__card_link_name {
+        color: #000000;
+
+        font-size: 1.25rem;
+    }
+
+    .baying__card_href {
+        color: #6C7174;
+
+        font-size: 1.25rem;
+        
+        word-break: break-all;
+    }
+
+    .baying__card_button:first-child {
+        margin-right: 0.75rem;
+    }
+
+    .baying__interaction {
+        grid-template-columns: 1fr;
+        grid-gap: 2rem;
+
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
+
+    .baying__bubble {
+        font-size: calc(var(--FontSize) * 0.57);
+
+        width: calc(var(--Size) * 0.55);
+        height: calc(var(--Size) * 0.55);
+    }
+
+    .baying__bubble_coin-svg, .baying__bubble_money-img img {
+        width: calc(var(--FontSize) * 0.57);
+    }
+
+
+
     /* statistic */
 
     .statistic__ul {
@@ -1224,11 +1584,14 @@ ol > li:before {
     /* activity */
 
     .activity__users {
-        font-size: 0.625ren;
-
         margin-left: 1rem;
         margin-right: 1rem;
     }
+
+    .activity__user {
+        font-size: 0.625rem;
+    }
+    
 
     .activity__img {
         width: 2.81rem;
@@ -1246,6 +1609,10 @@ ol > li:before {
 
     .activity__coin {
         margin-top: 0.75rem;
+    }
+
+    .activity__last-activity::before {
+        width: 0.9rem;
     }
 
     /* footer */
