@@ -1142,6 +1142,20 @@ ol > li:before {
         margin-bottom: 1vw;
     }
 }
+
+@media (max-width: 1200px) {
+    .baying__bubble {
+        font-size: calc(var(--FontSize) * 0.87);
+
+        width: calc(var(--Size) * 0.85);
+        height: calc(var(--Size) * 0.85);
+    }
+
+    .baying__bubble_coin-svg, .baying__bubble_money-img img {
+        width: calc(var(--FontSize) * 0.87);
+    }
+}
+
 /* tablet */
 
 @media (max-width: 1024px) {
@@ -1335,6 +1349,10 @@ ol > li:before {
         width: 2.5rem;
     }
 
+    .baying__bubbles {
+        padding: 1rem;
+    }
+
     .baying__bubble {
         font-size: calc(var(--FontSize) * 0.75);
 
@@ -1377,6 +1395,16 @@ ol > li:before {
 
     .footer__content {
         padding: 9.625rem 4.75rem 2.31rem;
+    }
+}
+
+@media (max-width: 700px) {
+    .baying__interaction {
+        grid-template-columns: 1fr;
+        grid-gap: 2rem;
+
+        margin-left: 2rem;
+        margin-right: 2rem;
     }
 }
 
@@ -1640,13 +1668,13 @@ ol > li:before {
         margin-right: 0.75rem;
     }
 
-    .baying__interaction {
+    /* .baying__interaction {
         grid-template-columns: 1fr;
         grid-gap: 2rem;
 
         margin-left: 2rem;
         margin-right: 2rem;
-    }
+    } */
 
     .baying__bubble {
         font-size: calc(var(--FontSize) * 0.57);
@@ -1675,21 +1703,27 @@ ol > li:before {
     }
 
     .baying__bubble:nth-child(1) {
-        margin-left: 2rem;
+        margin-left: 5vw;
     }
 
     .baying__bubble:nth-child(2) {
         order: 7;
+
+        margin-top: -4rem;
+
+        justify-self: center;
     }
     
     .baying__bubble:nth-child(3) {
-        margin-left: -1rem;
+        margin-left: -2vw;
     }
 
     .baying__bubble:nth-child(4) {
         order: 4;
 
-        margin-left: 4rem;
+        margin-right: -38%;
+
+        justify-self: end;
     }
 
     .baying__bubble:nth-child(5) {
@@ -1699,14 +1733,22 @@ ol > li:before {
     .baying__bubble:nth-child(6) {
         order: 5;
 
-        margin-left: 4rem;
+        margin-top: 1rem;
+        margin-bottom: -1rem;
+        margin-right: -38%;
+
+        justify-self: end;
     }
 
     .baying__bubble:nth-child(7) {
         order: 6;
 
-        margin-top: -10.25vw;
+        margin-top: -3.5rem;
         justify-self: end;
+    }
+
+    .baying__bubble:nth-child(8) {
+        margin-left: -18%;
     }
 
     .baying__bubble:nth-child(9) {
@@ -1729,6 +1771,8 @@ ol > li:before {
 
         grid-column: 1;
         grid-column-end: 2;
+
+        margin-top: -3rem;
     }
 
     .baying__bubble:nth-child(12) {
@@ -1739,6 +1783,8 @@ ol > li:before {
 
     .baying__bubble:nth-child(13) {
         order: 12;
+
+        margin-top: -2rem;
     }
 
     .baying__bubble:nth-child(14) {
@@ -1762,6 +1808,8 @@ ol > li:before {
 
     .baying__bubble:nth-child(17) {
         order: 16;
+
+        margin-top: -1rem;
     }
 
     .baying__bubble:nth-child(18) {
@@ -1885,6 +1933,19 @@ ol > li:before {
     }
 }
 
+@media (max-width: 820px) {
+    .baying__bubble {
+        font-size: calc(var(--FontSize) * 0.47);
+
+        width: calc(var(--Size) * 0.45);
+        height: calc(var(--Size) * 0.45);
+    }
+
+    .baying__bubble_coin-svg, .baying__bubble_money-img img {
+        width: calc(var(--FontSize) * 0.47);
+    }
+}
+
 @media (max-width: 465px) {
     .baying__bubble {
         font-size: calc(var(--FontSize) * 0.47);
@@ -1899,6 +1960,8 @@ ol > li:before {
 
     .baying__bubble:nth-child(7) {
         justify-self: center;
+
+        margin-top: -3rem;
     }
 
     .baying__bubble:nth-child(16) {
@@ -1908,7 +1971,7 @@ ol > li:before {
     }
 }
 
-@media (max-width: 380px) {
+@media (max-width: 400px) {
     .baying__bubble {
         font-size: calc(var(--FontSize) * 0.38);
 
@@ -1920,3 +1983,17 @@ ol > li:before {
         width: calc(var(--FontSize) * 0.38);
     }
 }
+
+@media (max-width: 360px) {
+    .baying__bubble {
+        font-size: calc(var(--FontSize) * 0.38);
+
+        width: calc(var(--Size) * 0.38);
+        height: calc(var(--Size) * 0.38);
+    }
+
+    .baying__bubble_coin-svg, .baying__bubble_money-img img {
+        width: calc(var(--FontSize) * 0.38);
+    }
+}
+
