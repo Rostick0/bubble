@@ -328,9 +328,13 @@ ol > li:before {
 
     padding: 2rem 6.25rem 3.75rem 6.25rem;
 
-    position: relative;
+    position: absolute;
+    top: 6rem;
+    left: 50%;
+    transform: translateX(-50%);
 
     max-width: 48.13rem;
+    width: 100%;
 
     z-index: 1000;
 }
@@ -1289,6 +1293,8 @@ ol > li:before {
     .price {
         padding: 1.5rem 4rem 1.875rem;
 
+        top: 5.55rem;
+
         max-width: 36.31rem;
     }
 
@@ -1485,6 +1491,15 @@ ol > li:before {
         transform: translateX(-50%);
 
         width: 22rem;
+    }
+
+
+
+
+    /* price */
+
+    .price {
+        top: 11.9rem;
     }
 
 
@@ -2149,6 +2164,25 @@ ol > li:before {
 }
 
 @media (max-width: 400px) {
+    /* price */
+
+    .price__img-left-bottom {
+        width: 90%;
+    }
+
+    .price__information {
+        margin-bottom: 4rem;
+    }
+
+    .price__statistics {
+        margin-bottom: 2rem;
+    }
+
+
+
+
+    /* baying */
+
     .baying__bubble {
         font-size: calc(var(--FontSize) * 0.38);
 
