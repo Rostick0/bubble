@@ -455,7 +455,7 @@ ol > li:before {
     margin-top: -20rem;
     margin-bottom: -21rem;
     padding-top: 15vh;
-    padding-bottom: 2rem;
+    padding-bottom: 8rem;
 }
 
 .rule__name {
@@ -615,13 +615,13 @@ ol > li:before {
 
 .baying {
     background: url('../img/baying_background.png') no-repeat;
-    background-size: cover;
+    background-size: 100% 100%;
     background-position: center;
 
 
     padding-top: 13.75rem;
     padding-bottom: 10rem;
-    margin-top: 7.125rem;
+    margin-top: 2.125rem;
     margin-bottom: -11rem;
 }
 
@@ -1169,6 +1169,12 @@ ol > li:before {
 
 
 @media (max-width: 1440px) {
+    /* baying */
+    
+    .baying {
+        background-size: 115% 100%;
+    }
+    
     .baying__bubbles {
         padding-left: 3rem;
         padding-right: 3rem;
@@ -1181,6 +1187,15 @@ ol > li:before {
     .baying__bubble:nth-child(11) {
         margin-top: -5vw;
         margin-bottom: 1vw;
+    }
+
+
+
+
+    /* footer */
+
+    .footer__inner {
+        background-size: 110% 100%;
     }
 }
 
@@ -1335,10 +1350,6 @@ ol > li:before {
 
     /* baying */
 
-    .baying {
-        background-size: 120% 100%;
-    }
-
     .baying__card {
         max-width: 44rem;
     }
@@ -1454,10 +1465,6 @@ ol > li:before {
 
 @media (max-width: 700px) {
     /* baying */
-
-    .baying {
-        background-size: 140% 100%;
-    }
 
     .baying__interaction {
         grid-template-columns: 1fr;
