@@ -225,9 +225,8 @@ ol > li:before {
 
     padding: 1.2rem 2.25rem  2.25rem;
 
-    position: relative;
-    
-    max-width: 23.5rem;
+    position: absolute;
+    top: 6rem;
 
     z-index: 1000;
 }
@@ -271,17 +270,12 @@ ol > li:before {
     padding: 0.19rem 0.875rem 0.19rem 3rem;
 }
 
-.choose__item._hidden {
-    /* opacity: 0;
-    width: 0;
-    height: 0; */
-    display: none;
+.choose__item_name {
+    margin-right: 2.25rem;
 }
 
-.choose__item._hidden * {
-    /* opacity: 0;
-    width: 0;
-    height: 0; */
+.choose__item._hidden {
+    display: none;
 }
 
 .choose__item:last-child {
@@ -308,7 +302,7 @@ ol > li:before {
 }
 
 .choose__count span {
-    margin-right: 1.25rem;
+    margin-right: 0.81rem;
 }
 
 .choose__icon {
@@ -788,6 +782,18 @@ ol > li:before {
     margin-left: 8.44rem;
     margin-right: 8.44rem;
     margin-bottom: 1.25rem;
+
+    position: relative;
+}
+
+.baying__select {
+    display: flex;
+    justify-content: left;
+}
+
+.baying__buy {
+    display: flex;
+    justify-content: right;
 }
 
 .baying__button {
@@ -1261,10 +1267,10 @@ ol > li:before {
     .choose {
         font-size: 1.06rem;
 
+        top: 5.55rem;
+
         padding: 1.25rem;
         padding-bottom: 2.25rem;
-
-        max-width: 19.9rem;
     }
 
     .choose__name {
@@ -1470,6 +1476,20 @@ ol > li:before {
 }
 
 @media (max-width: 700px) {
+    /* choose */
+
+    .choose {
+        top: 11.9rem;
+
+        left: 50%;
+        transform: translateX(-50%);
+
+        width: 22rem;
+    }
+
+
+
+
     /* baying */
 
     .baying {
@@ -1482,6 +1502,11 @@ ol > li:before {
 
         margin-left: 2rem;
         margin-right: 2rem;
+    }
+
+    .baying__select,
+    .baying__buy {
+        justify-content: center;
     }
 
     /* rule */
@@ -1551,8 +1576,6 @@ ol > li:before {
 
     .choose {
         padding: 0.81rem 1.875rem 1.875rem;
-
-        max-width: 90vw;
     }
 
     .choose__name {
@@ -1563,9 +1586,12 @@ ol > li:before {
         font-size: 1.25rem;
     }
 
+    .choose__item_name {
+        margin-right: 0.25rem;
+    }
+
     .choose__item {
         padding-left: 2rem;
-        margin-bottom: 1.25rem;
     }
 
 
@@ -1742,6 +1768,11 @@ ol > li:before {
 
         padding-top: 8.75rem;
         margin-top: 11.125rem;
+    }
+
+    .baying__button {
+        max-width: 21.875rem;
+        width: 100%;
     }
 
     .baying__card {
@@ -2063,6 +2094,17 @@ ol > li:before {
 
     /* choose */
 
+    .choose {
+        padding: 0.81rem 1.875rem 1.875rem;
+
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .choose__scroll {
+        margin-left: 0.5rem;
+    }
+
     .choose__scroll-top > svg > path,
     .choose__scroll-bottom > svg > path {
         stroke-width: 1px;
@@ -2126,7 +2168,13 @@ ol > li:before {
         padding: 0.25rem;
     }
 
+    .choose {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
 
+
+    
 
     /* baying */
 
