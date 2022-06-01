@@ -450,7 +450,7 @@ ol > li:before {
 
 .rule {
     background: url('../img/rule_background.png') no-repeat;
-    background-size: 100% 100%;
+    background-size: cover;
 
     margin-top: -20rem;
     margin-bottom: -21rem;
@@ -615,7 +615,8 @@ ol > li:before {
 
 .baying {
     background: url('../img/baying_background.png') no-repeat;
-    background-size: 100% 100%;
+    background-size: cover;
+    background-position: center;
 
 
     padding-top: 13.75rem;
@@ -735,6 +736,12 @@ ol > li:before {
     margin-bottom: 1.25rem;
 }
 
+.baying__card_buttons {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 1.75rem;
+}
+
 .baying__card_button {
     background: #FFFFFF;
     border: 1px solid #000000;
@@ -746,10 +753,6 @@ ol > li:before {
     padding: 0.25rem 0;
 
     width: 5.5rem;
-}
-
-.baying__card_button:first-child {
-    margin-right: 1.75rem;
 }
 
 .baying__card_lines {
@@ -1128,6 +1131,7 @@ ol > li:before {
 .footer__inner {
     background: url('../img/footer_background.png') no-repeat;
     background-size: 100% 100%;
+    background-position: center;
 }
 
 .footer__content {
@@ -1331,6 +1335,10 @@ ol > li:before {
 
     /* baying */
 
+    .baying {
+        background-size: 120% 100%;
+    }
+
     .baying__card {
         max-width: 44rem;
     }
@@ -1435,18 +1443,35 @@ ol > li:before {
     
     /* footer */
 
+    .footer__inner {
+        background-size: 110% 100%;
+    }
+
     .footer__content {
-        padding: 9.625rem 4.75rem 2.31rem;
+        padding: 16vw 4.75rem 2.31rem;
     }
 }
 
 @media (max-width: 700px) {
+    /* baying */
+
+    .baying {
+        background-size: 140% 100%;
+    }
+
     .baying__interaction {
         grid-template-columns: 1fr;
         grid-gap: 2rem;
 
         margin-left: 2rem;
         margin-right: 2rem;
+    }
+
+    /* footer */
+
+    .footer__inner {
+        background-size: 120% 100%;
+        background-position: center;
     }
 }
 
@@ -1461,6 +1486,11 @@ ol > li:before {
     }
 
     /* header */
+
+    .header__inner {
+        background-size: 120% 100%;
+        background-position: center;
+    }
 
     .header__content_top {
         padding-left: 1rem;
@@ -1554,8 +1584,10 @@ ol > li:before {
     /* rule */
 
     .rule {
+        background-size: 300% 100%;
+
         padding-top: 4.75rem;
-        margin-top: -9rem;
+        margin-top: -27vw;
     }
 
     .rule__items {
@@ -1668,6 +1700,8 @@ ol > li:before {
     } */
 
     .rule__item:nth-child(7) .rule__text {
+        margin-bottom: 2rem;
+
         max-width: 71vw;
     }
 
@@ -1677,6 +1711,15 @@ ol > li:before {
 
 
     /* baying */
+
+    .baying {
+        background: url('../img/baying_background_mobile.png');
+        background-size: 125% 100%;
+        background-position: center;
+
+        padding-top: 8.75rem;
+        margin-top: 11.125rem;
+    }
 
     .baying__card {
         flex-direction: column;
@@ -1709,14 +1752,6 @@ ol > li:before {
     .baying__card_button:first-child {
         margin-right: 0.75rem;
     }
-
-    /* .baying__interaction {
-        grid-template-columns: 1fr;
-        grid-gap: 2rem;
-
-        margin-left: 2rem;
-        margin-right: 2rem;
-    } */
 
     .baying__bubble {
         font-size: calc(var(--FontSize) * 0.57);
@@ -1919,6 +1954,10 @@ ol > li:before {
 
     /* activity */
 
+    .activity {
+        margin-top: 5.75rem;
+    }
+
     .activity__users {
         margin-left: 1rem;
         margin-right: 1rem;
@@ -1941,10 +1980,7 @@ ol > li:before {
 
     .activity__info {
         flex-wrap: wrap;
-    }
-
-    .activity__coin {
-        margin-top: 0.75rem;
+        row-gap: 0.5rem;
     }
 
     .activity__last-activity::before {
@@ -1957,7 +1993,7 @@ ol > li:before {
         flex-wrap: wrap-reverse;
         justify-content: center;
 
-        padding: 1rem 1rem 1.5rem;
+        padding: 8vw 1rem 1.5rem;
     }
 
     .footer__content > *:first-child {
@@ -1989,6 +2025,19 @@ ol > li:before {
 }
 
 @media (max-width: 465px) {
+    /* header */
+
+    .header__content_top {
+        margin-bottom: 5rem;
+    }
+
+    .header__logo {
+        padding-bottom: 30vw;
+    }
+
+
+
+
     /* choose */
 
     .choose__scroll-top > svg > path,
