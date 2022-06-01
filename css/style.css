@@ -1484,6 +1484,12 @@ ol > li:before {
         margin-right: 2rem;
     }
 
+    /* rule */
+
+    .rule {
+        padding-top: 15rem;
+    }
+
     /* footer */
 
     .footer__inner {
