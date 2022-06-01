@@ -154,6 +154,8 @@ ol > li:before {
 .header__inner {
     background: url('../img/header__background.png') no-repeat;
     background-size: 100% 100%;
+    position: relative;
+    z-index: 10;
 }
 
 .header__content_top {
