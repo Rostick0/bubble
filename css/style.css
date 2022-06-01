@@ -2048,6 +2048,16 @@ ol > li:before {
 }
 
 @media (max-width: 360px) {
+    /* choose */
+
+    .choose__item {
+        padding: 0.25rem;
+    }
+
+
+
+    /* baying */
+
     .baying__bubble {
         font-size: calc(var(--FontSize) * 0.38);
 
