@@ -454,7 +454,7 @@ ol > li:before {
 
     margin-top: -20rem;
     margin-bottom: -21rem;
-    padding-top: 15vh;
+    padding-top: 8vw;
     padding-bottom: 8rem;
 }
 
@@ -560,7 +560,7 @@ ol > li:before {
 
 .rule__item:nth-child(5) .rule__item_inner {
     display: flex;
-    align-items: end;
+    align-items: flex-end;
 
     margin-right: 7rem;
 }
@@ -1078,14 +1078,13 @@ ol > li:before {
     margin-left: auto;
 }
 
-.activity__last-activity::before {
-    content: url('../img/activity_tilde.svg');
-    
-    display: inline-block;
-
-    margin-right: 2.5rem;
-    margin-bottom: 0.25rem;
+.activity__last-activity {
+    display: flex;
+    justify-content: center;
+    column-gap: 1.5rem;
 }
+
+
 
 
 /* statistic */
@@ -1181,6 +1180,15 @@ ol > li:before {
 
 
 @media (max-width: 1440px) {
+    /* rule */
+
+    .rule {
+        padding-top: 15vw;
+    }
+
+
+
+
     /* baying */
     
     .baying {
@@ -1212,6 +1220,17 @@ ol > li:before {
 }
 
 @media (max-width: 1200px) {
+    /* rule */
+
+    .rule {
+        padding-top: 18vw;
+    }
+
+
+
+
+    /* baying */
+
     .baying__bubble {
         font-size: calc(var(--FontSize) * 0.87);
 
@@ -1456,7 +1475,8 @@ ol > li:before {
     .activity__img {
         margin-right: 1.875rem;
 
-        width: 2.75rem;
+        max-width: 2.75rem;
+        min-width: 2.75rem;
     }
 
     .activity__id {
@@ -1465,9 +1485,11 @@ ol > li:before {
         padding: 0.125rem 0.31rem;
     }
 
-    .activity__last-activity::before {
-        margin-right: 0.5rem;
+    .activity__last-activity {
+        column-gap: 0.5rem;
     }
+
+
 
     
     /* footer */
@@ -1759,10 +1781,6 @@ ol > li:before {
         margin-left: 1rem;
     }
 
-    /* .rule__item:nth-child(7)::before {
-        margin-left: 6rem;
-    } */
-
     .rule__item:nth-child(7) .rule__text {
         margin-bottom: 2rem;
 
@@ -2038,7 +2056,8 @@ ol > li:before {
     
 
     .activity__img {
-        width: 2.81rem;
+        min-width: 2.81rem;
+        max-width: 2.81rem;
 
         margin-right: 1.125rem;
     }
@@ -2052,9 +2071,16 @@ ol > li:before {
         row-gap: 0.5rem;
     }
 
-    .activity__last-activity::before {
-        width: 0.9rem;
+    .activity__last-activity_svg {
+        width: 10px;
     }
+
+    .activity__last-activity_svg path {
+        stroke-width: 1;
+    }
+
+
+
 
     /* footer */
 
@@ -2160,6 +2186,15 @@ ol > li:before {
         justify-self: center;
 
         margin-top: 0.25rem;
+    }
+
+
+    
+
+    /* activity */
+    
+    .activity__info {
+        transform: translateY(30%);
     }
 }
 
