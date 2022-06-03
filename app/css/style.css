@@ -853,8 +853,11 @@ ol > li:before {
 }
 
 .baying__bubble {
-    background: url('../img/price-num_background.png') no-repeat;
-    background-size: 100% 100%;
+    background: rgba(0, 255, 255, 0.13);
+
+    border-radius: 50%;
+
+    cursor: pointer;
 
     display: inline-flex;
     flex-direction: column;
@@ -864,8 +867,82 @@ ol > li:before {
 
     font-size: var(--FontSize);
 
+    position: relative;
+
     width: var(--Size);
     height: var(--Size);
+
+    z-index: 10;
+}
+
+.baying__bubble::before {
+    content: "";
+
+    border: double 1px transparent;
+    border-radius: 50%;
+    background-image: linear-gradient(white, white), linear-gradient(240deg, rgba(0, 255, 117, 1),rgba(3, 240, 255, 1),rgba(253, 161, 255, 1));
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+
+    position: absolute;
+
+    width: 101%;
+    height: 101%;
+
+    z-index: -1;
+}
+
+.baying__bubble::after {
+    content: "";
+
+    border-radius: 50%;
+    background: rgba(0, 255, 255, 0.13);
+
+    position: absolute;
+
+    width: 101%;
+    height: 101%;
+
+    z-index: -1;
+}
+
+.baying__bubble._animation {
+    animation: bubble-bursting;
+    animation-duration: 0.5s;
+}
+
+.baying__bubble::before._animation,
+.baying__bubble._animation::after {
+    content: "";
+    display: none;
+
+    animation: bubble-increase;
+    animation-duration: 2.5s;
+}
+
+@keyframes bubble-increase {
+    0% {
+        display: none;
+    }
+
+    50% {
+    }
+
+    100% {
+    }
+}
+
+@keyframes bubble-bursting {
+    0% {
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
 
 .baying__bubble:nth-child(-2n + 7) {

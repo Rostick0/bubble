@@ -74,3 +74,21 @@ if (chooseScrollTop) {
         showChooseItem(item, itemLenght);
     })
 }
+
+const bayingBubble = document.querySelectorAll('.baying__bubble');
+
+if (bayingBubble) {
+    bayingBubble.forEach(elem => {
+        // if (elem.classList.contains('_animation')) {
+        //     elem.remove('_animation');
+        // }
+
+        elem.addEventListener('click', e => {
+            elem.classList.add('_animation');
+
+            setTimeout(() => {
+                elem.classList.remove('_animation');
+            }, 2500);
+        })
+    })
+}
