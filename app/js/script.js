@@ -45,6 +45,18 @@ function showChooseItem(item, itemLenght) {
     }
 }
 
+function setAnimation(elem, second) {
+    elem.addEventListener('click', e => {
+        elem.classList.add('_animation');
+
+        const timerAnimation = setTimeout(() => {
+            elem.classList.remove('_animation');
+
+            clearTimeout(timerAnimation);
+        }, second);
+    })
+}
+
 if (chooseScrollTop) {
     let item = 2;
     const itemLenght = document.querySelectorAll('.choose__item').length
@@ -79,16 +91,6 @@ const bayingBubble = document.querySelectorAll('.baying__bubble');
 
 if (bayingBubble) {
     bayingBubble.forEach(elem => {
-        // if (elem.classList.contains('_animation')) {
-        //     elem.remove('_animation');
-        // }
-
-        elem.addEventListener('click', e => {
-            elem.classList.add('_animation');
-
-            setTimeout(() => {
-                elem.classList.remove('_animation');
-            }, 2500);
-        })
+        setAnimation(elem, 1000)
     })
 }

@@ -853,7 +853,7 @@ ol > li:before {
 }
 
 .baying__bubble {
-    background: rgba(0, 255, 255, 0.13);
+    /* background: rgba(0, 255, 255, 0.13); */
 
     border-radius: 50%;
 
@@ -875,73 +875,118 @@ ol > li:before {
     z-index: 10;
 }
 
-.baying__bubble::before {
-    content: "";
+.baying__bubble._animation {
+    animation: bubble-increase;
+    animation-duration: 3s;
+}
 
+.baying__bubble_particle {
+    content: "";
+    
+    background: rgba(0, 255, 255, 0.13);
+    position: absolute;
+
+    transition: 250ms;
+
+    width: 50%;
+    height: 50%;
+}
+
+.baying__bubble_particle::before {
+    content: "";
     border: double 1px transparent;
-    border-radius: 50%;
-    background-image: linear-gradient(white, white), linear-gradient(240deg, rgba(0, 255, 117, 1),rgba(3, 240, 255, 1),rgba(253, 161, 255, 1));
+    /* background-image: linear-gradient(white, white), linear-gradient(240deg, rgba(0, 255, 117, 1),rgba(3, 240, 255, 1),rgba(253, 161, 255, 1)); */
     background-origin: border-box;
     background-clip: content-box, border-box;
-
     position: absolute;
-
-    width: 101%;
-    height: 101%;
-
+    width: 100%;
+    height: 100%;
     z-index: -1;
 }
 
-.baying__bubble::after {
-    content: "";
+.baying__bubble_particle:nth-child(1) {
+    border-radius: 100% 0 0 0;
 
-    border-radius: 50%;
-    background: rgba(0, 255, 255, 0.13);
-
-    position: absolute;
-
-    width: 101%;
-    height: 101%;
-
-    z-index: -1;
+    left: 0;
+    top: 0;
 }
 
-.baying__bubble._animation {
-    animation: bubble-bursting;
-    animation-duration: 0.5s;
+.baying__bubble_particle:nth-child(1)::before {
+    background-image: linear-gradient(white, white), linear-gradient(rgba(3, 240, 255, 1), rgba(253, 161, 255, 1));
+    border-right: 0;
+    border-bottom: 0;
+    border-radius: 100% 0 0 0;
 }
 
-.baying__bubble::before._animation,
-.baying__bubble._animation::after {
-    content: "";
-    display: none;
+.baying__bubble_particle:nth-child(2) {
+    border-radius: 0 100% 0 0;
 
-    animation: bubble-increase;
-    animation-duration: 2.5s;
+    top: 0;
+    right: 0;
+}
+
+.baying__bubble_particle:nth-child(2)::before {
+    background-image: linear-gradient(white, white), linear-gradient(rgba(3, 240, 255, 1) -75%, rgba(0, 255, 117, 1));
+    border-left: 0;
+    border-bottom: 0;
+    border-radius: 0 100% 0 0;
+}
+
+.baying__bubble_particle:nth-child(3) {
+    border-radius: 0 0 100% 0;
+
+    right: 0;
+    bottom: 0;
+}
+
+.baying__bubble_particle:nth-child(3)::before {
+    background-image: linear-gradient(white, white), linear-gradient(rgba(0, 255, 117, 1) -75%, rgba(3, 240, 255, 1));
+    border-left: 0;
+    border-top: 0;
+    border-radius: 0 0 100% 0;
+}
+
+.baying__bubble_particle:nth-child(4) {
+    border-radius: 0% 0 0% 100%;
+
+    left: 0;
+    bottom: 0;
+}
+
+.baying__bubble_particle:nth-child(4)::before {
+    background-image: linear-gradient(white, white), linear-gradient(rgba(253, 161, 255, 1) 95%, rgba(3, 240, 255, 1));
+    border-top: 0;
+    border-right: 0;
+    border-radius: 0 0 0 100%;
+}
+
+._animation .baying__bubble_particle:nth-child(1) {
+    left: -3%;
+    top: -3%;
+}
+
+._animation .baying__bubble_particle:nth-child(2) {
+    top: -3%;
+    right: -3%;
+}
+
+._animation .baying__bubble_particle:nth-child(3) {
+    right: -3%;
+    bottom: -3%;
+}
+
+._animation .baying__bubble_particle:nth-child(4) {
+    left: -3%;
+    bottom: -3%;
 }
 
 @keyframes bubble-increase {
     0% {
-        display: none;
     }
 
     50% {
-    }
-
-    100% {
-    }
-}
-
-@keyframes bubble-bursting {
-    0% {
-    }
-
-    50% {
-        transform: scale(1.05);
-    }
-
-    100% {
-        transform: scale(1);
+        opacity: 0;
+        transform: scale(1.03);
     }
 }
 
@@ -1801,6 +1846,10 @@ ol > li:before {
         max-width: 94vw;
     }
 
+    .rule__item:nth-child(2) .rule__arrow {
+        margin-left: auto;
+    }
+
     .rule__item:nth-child(3) {
         margin-top: -4.25rem;
     }
@@ -1832,6 +1881,10 @@ ol > li:before {
 
     .rule__item:nth-child(5) .rule__text {
         max-width: 80vw;
+    }
+
+    .rule__item:nth-child(5) .rule__arrow {
+        margin-left: auto;
     }
 
     .rule__item:nth-child(6) {
