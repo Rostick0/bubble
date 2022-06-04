@@ -853,16 +853,10 @@ ol > li:before {
 }
 
 .baying__bubble {
-    /* background: rgba(0, 255, 255, 0.13); */
-
     border-radius: 50%;
 
     cursor: pointer;
 
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     order: var(--Order);
 
     font-size: var(--FontSize);
@@ -875,10 +869,42 @@ ol > li:before {
     z-index: 10;
 }
 
-.baying__bubble._animation {
+.baying__bubble_content {
+    background: url('../img/price-num_background.svg') no-repeat;
+    background-size: 100% 100%;
+
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+}
+
+.baying__bubble._animation  .baying__bubble_content {
     animation: bubble-increase;
     animation-duration: 3s;
+    animation-fill-mode: forwards;
 }
+
+@keyframes bubble-increase {
+    10% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+/* ._animation .baying__bubbles_small { 
+    animation: name duration timing-function delay iteration-count direction fill-mode;
+    animation: scattering-bubbles;
+    animation-duration: 3s;
+
+    opacity: 1;
+} */
 
 .baying__bubble_particle {
     content: "";
@@ -892,101 +918,157 @@ ol > li:before {
     height: 50%;
 }
 
-.baying__bubble_particle::before {
-    content: "";
-    border: double 1px transparent;
-    /* background-image: linear-gradient(white, white), linear-gradient(240deg, rgba(0, 255, 117, 1),rgba(3, 240, 255, 1),rgba(253, 161, 255, 1)); */
-    background-origin: border-box;
-    background-clip: content-box, border-box;
+.baying__bubbles_small {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     position: absolute;
+
     width: 100%;
     height: 100%;
-    z-index: -1;
 }
 
-.baying__bubble_particle:nth-child(1) {
-    border-radius: 100% 0 0 0;
+.baying__bubble_small,
+.baying__bubble_small::before,
+.baying__bubble_small::after {
+    content: "";
 
-    left: 0;
-    top: 0;
+    background: url('../img/price-num_background.svg') no-repeat;
+    background-size: 100% 100%;
+
+    border-radius: 50%;
+
+    display: inline-block;
+
+    position: absolute;
+
+    width: 5%;
+    height: 5%;
+
+    opacity: 0;
 }
 
-.baying__bubble_particle:nth-child(1)::before {
-    background-image: linear-gradient(white, white), linear-gradient(rgba(3, 240, 255, 1), rgba(253, 161, 255, 1));
-    border-right: 0;
-    border-bottom: 0;
-    border-radius: 100% 0 0 0;
+.baying__bubble._animation .baying__bubble_small,
+.baying__bubble._animation .baying__bubble_small::before,
+.baying__bubble._animation .baying__bubble_small::after {
+    animation: scattering-bubbles;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+
+    opacity: 1;
 }
 
-.baying__bubble_particle:nth-child(2) {
-    border-radius: 0 100% 0 0;
-
-    top: 0;
-    right: 0;
+.baying__bubble._animation .baying__bubble_small::before,
+.baying__bubble._animation .baying__bubble_small::after {
+    width: 100%;
+    height: 100%;
 }
 
-.baying__bubble_particle:nth-child(2)::before {
-    background-image: linear-gradient(white, white), linear-gradient(rgba(3, 240, 255, 1) -75%, rgba(0, 255, 117, 1));
-    border-left: 0;
-    border-bottom: 0;
-    border-radius: 0 100% 0 0;
+.baying__bubble_small:nth-child(1)::before {
+    top: 250%;
+    right: 150%;
 }
 
-.baying__bubble_particle:nth-child(3) {
-    border-radius: 0 0 100% 0;
-
-    right: 0;
-    bottom: 0;
+.baying__bubble_small:nth-child(1)::after {
+    right: 300%;
+    bottom: 150%;
 }
 
-.baying__bubble_particle:nth-child(3)::before {
-    background-image: linear-gradient(white, white), linear-gradient(rgba(0, 255, 117, 1) -75%, rgba(3, 240, 255, 1));
-    border-left: 0;
-    border-top: 0;
-    border-radius: 0 0 100% 0;
+.baying__bubble_small:nth-child(1) {
+    left: 45%;
 }
 
-.baying__bubble_particle:nth-child(4) {
-    border-radius: 0% 0 0% 100%;
-
-    left: 0;
-    bottom: 0;
+.baying__bubble_small:nth-child(2)::before {
+    bottom: 500%;
+    right: 250%;
 }
 
-.baying__bubble_particle:nth-child(4)::before {
-    background-image: linear-gradient(white, white), linear-gradient(rgba(253, 161, 255, 1) 95%, rgba(3, 240, 255, 1));
-    border-top: 0;
-    border-right: 0;
-    border-radius: 0 0 0 100%;
+.baying__bubble_small:nth-child(2)::after {
+    left: 300%;
+    top: 100%;
 }
 
-._animation .baying__bubble_particle:nth-child(1) {
-    left: -3%;
-    top: -3%;
+.baying__bubble_small:nth-child(2) {
+    top: 45%;
+
+    transform: rotate(50deg);
 }
 
-._animation .baying__bubble_particle:nth-child(2) {
-    top: -3%;
-    right: -3%;
+.baying__bubble_small:nth-child(3)::before {
+    left: 750%;
 }
 
-._animation .baying__bubble_particle:nth-child(3) {
-    right: -3%;
-    bottom: -3%;
+.baying__bubble_small:nth-child(3)::after {
+    top: 400%;
 }
 
-._animation .baying__bubble_particle:nth-child(4) {
-    left: -3%;
-    bottom: -3%;
+.baying__bubble_small:nth-child(3) {
+    right: 45%;
 }
 
-@keyframes bubble-increase {
-    0% {
+.baying__bubble_small:nth-child(4)::before {
+    right: 320%;
+    bottom: 100%;
+}
+
+.baying__bubble_small:nth-child(4)::after {
+    left: 50%;
+}
+
+.baying__bubble_small:nth-child(4) {
+    bottom: 45%;
+
+    transform: rotate(-90deg);
+}
+
+.baying__bubble_small:nth-child(5)::before {
+    right: 320%;
+    bottom: 100%;
+}
+
+.baying__bubble_small:nth-child(5)::after {
+    left: 50%;
+}
+
+.baying__bubble_small:nth-child(5) {
+    left: 40%;
+    bottom: 35%;
+
+    transform: rotate(-45deg);
+}
+
+.baying__bubble_small:nth-child(6)::before {
+    right: 320%;
+    bottom: 100%;
+}
+
+.baying__bubble_small:nth-child(6)::after {
+    left: 50%;
+}
+
+.baying__bubble_small:nth-child(6) {
+    right: 30%;
+    bottom: 45%;
+
+    transform: rotate(45deg);
+}
+
+@keyframes scattering-bubbles {
+    70% {
+        margin-left: -30%;
+        margin-top: -20%;
+        margin-bottom: -50%;
+        margin-right: -30%;
+        opacity: 1;
     }
 
-    50% {
+    100% {
+        margin-left: -30%;
+        margin-top: -20%;
+        margin-bottom: -50%;
+        margin-right: -30%;
         opacity: 0;
-        transform: scale(1.03);
     }
 }
 

@@ -47,13 +47,17 @@ function showChooseItem(item, itemLenght) {
 
 function setAnimation(elem, second) {
     elem.addEventListener('click', e => {
+        if (elem.classList.contains('_animation')) {
+            return elem.classList.remove('_animation');
+        }
+
         elem.classList.add('_animation');
 
-        const timerAnimation = setTimeout(() => {
-            elem.classList.remove('_animation');
+        // const timerAnimation = setTimeout(() => {
+        //     elem.classList.remove('_animation');
 
-            clearTimeout(timerAnimation);
-        }, second);
+        //     clearTimeout(timerAnimation);
+        // }, second);
     })
 }
 
@@ -91,6 +95,6 @@ const bayingBubble = document.querySelectorAll('.baying__bubble');
 
 if (bayingBubble) {
     bayingBubble.forEach(elem => {
-        setAnimation(elem, 1000)
+        setAnimation(elem, 3000)
     })
 }
